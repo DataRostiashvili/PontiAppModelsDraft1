@@ -9,9 +9,9 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             using var context = new ApplicationDbContext();
-
+           // context.Entry<User>().Entity.UserGuestEvents.
             var query = context.Users
-                .Include(user => user.UserEvents)
+                .Include(user => user.UserGuestEvents)
                 .ThenInclude(userEvent => userEvent.Event);
 
             
